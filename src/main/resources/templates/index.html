@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="utf-8">
         <title>首页</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
         <!--<meta name="viewport" content="width=device-width,initial-scale=1">-->
         <script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
-        <script type="text/javascript" src="../js/vue.js"></script>
+<!--        <script type="text/javascript" src="../js/vue.js"></script>-->
         <link rel="stylesheet" href="../css/matrix_style.css" />
         <!--CDN图标库-->
         <link href="../css/font-awesome.min.css" rel="stylesheet">
     </head>
 
     <body>
-        <script type="text/javascript" src="../js/index.js"></script>
         <!--主页样式-->
         <div class="wrap">
             <!--菜单布局-->
@@ -26,10 +25,10 @@
                 </div>
                 <!--头像和昵称-->
                 <div class="icon">
-                    <div class="icon-img"><img src="" alt="" id="handImage"/></div>
+                    <div class="icon-img"><img th:src="${login_user?.mHead ?: '/img/default.jpg'}" alt="" id="handImage"/></div>
                     <div class="icon-con">
                         <p>您好！</p>
-                        <h2 id="uName"></h2>
+                        <h2 id="uName" th:text="${login_user?.mName?:''}"></h2>
                     </div>
                 </div>
                 <!--第一个分割线和标题-->

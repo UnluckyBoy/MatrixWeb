@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
     <title>登录&注册</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../css/matrix_style.css">
-    <script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<!--    <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.min.css">-->
 </head>
 
 <body>
@@ -23,20 +23,18 @@
                 <h2>登录</h2>
                 <form method="post" id="form-sign-in" action="/index">
                     <label>
-                        <span>Enter Account</span>
+                        <span>请输入账户</span>
                         <input type="text" name="account" id="account">
                         </label>
                     <label>
-                        <span>Enter Password</span>
+                        <span>请输入密码</span>
                         <input type="password" name="password" id="password">
                     </label>
-
                     <!--登录按钮-->
-                    <button class="submit" type="button" id="login-btn">登录</button>
+                    <button class="submit-global" type="button" id="login-btn">登录</button>
                 </form>
                 <p class="forgot-pass">忘记密码？</p>
                 <a href="" id="login"></a>
-    
                 <!--登录方式-->
                 <div class="social-medie">
                     <ul>
@@ -65,27 +63,34 @@
                     <h2>注册</h2>
                     <form method="post" id="form-sign-up" action="/index">
                         <label>
-                            <span>Name</span>
-                            <input type="text" id="up_name">
+                            <span>名称</span>
+                            <input type="text" id="re_name">
                         </label>
                         <label>
-                            <span>Account</span>
-                            <input type="text" id="up_account">
+                            <span>账户</span>
+                            <input type="text" id="re_account">
                         </label>
                         <label>
-                            <span>Password</span>
-                            <input type="password" id="up_password">
+                            <span>密码</span>
+                            <input type="password" id="re_password">
                         </label>
                         <label>
-                            <span>Confirm Password</span>
-                            <input type="password" id="up_confirm">
+                            <span>密码验证</span>
+                            <input type="password" id="re_confirm_pass">
                         </label>
                     </form>
-                    <button class="submit" type="button" id="register-btn">注册</button>
+                    <label class="checkbox no-padding" for="agreement">
+                        <input type="checkbox" id="agreement" name="agreement" required value="checked"><span>我已阅读并同意注册协议</span>
+                    </label>
+                    <button class="submit-regis" type="button" id="register-btn">注册</button>
                 </div>
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="../js/loginScript.js"></script>
+<!--    <script type="text/javascript" src="../js/bootstrap/bootstrap.min.js"></script>-->
+
 </body>
 
 </html>
